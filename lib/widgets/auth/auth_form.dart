@@ -6,6 +6,7 @@ class AuthForm extends StatefulWidget {
     String password,
     String username,
     bool isLogin,
+    BuildContext ctx,
   ) submitFn;
 
   AuthForm(this.submitFn);
@@ -30,7 +31,13 @@ class _AuthFormState extends State<AuthForm> {
 
       print('$_userName, $_userEmail, $_userPassword ..... ');
 
-      widget.submitFn(_userEmail, _userPassword, _userName, _isLogin);
+      widget.submitFn(
+        _userEmail.trim(), // `trim` to remove extra white space when press tab
+        _userPassword.trim(), // `trim` to remove extra white space
+        _userName.trim(), // `trim` to remove extra white space
+        _isLogin,
+        context, // Stateful widget always has `context` in its environment
+      );
     }
   }
 
