@@ -19,6 +19,7 @@ class _NewMessageState extends State<NewMessage> {
       'text': _enteredMessage,
       'createdAt': Timestamp.now(),
       'userId': currentUser.uid,
+      'userEmail': currentUser.email,
     });
     _controller.clear(); // clear textfield after add
   }

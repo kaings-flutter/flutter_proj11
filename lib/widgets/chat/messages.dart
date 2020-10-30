@@ -29,12 +29,14 @@ class Messages extends StatelessWidget {
 
             final chatDocs = chatSnapshot.data.documents;
             print('chatDocs..... ${chatSnapshot.data.documents.length}');
+            print('futureSnapshot data..... ${futureSnapshot.data.email}');
 
             return ListView.builder(
               reverse: true, // reverse the list frm bottom to top
               itemCount: chatDocs.length,
               itemBuilder: (ctx, idx) => MessageBubble(
                 chatDocs[idx]['text'],
+                chatDocs[idx]['userEmail'],
                 chatDocs[idx]['userId'] == futureSnapshot.data.uid,
                 key: ValueKey(chatDocs[idx]
                     .documentID), // `documentID` will give specific id of the document which is unique
