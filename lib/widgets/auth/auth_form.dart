@@ -7,6 +7,7 @@ class AuthForm extends StatefulWidget {
     String email,
     String password,
     String username,
+    File image,
     bool isLogin,
     BuildContext ctx,
   ) submitFn;
@@ -54,6 +55,7 @@ class _AuthFormState extends State<AuthForm> {
         _userEmail.trim(), // `trim` to remove extra white space when press tab
         _userPassword.trim(), // `trim` to remove extra white space
         _userName.trim(), // `trim` to remove extra white space
+        _userImage,
         _isLogin,
         context, // Stateful widget always has `context` in its environment
       );
