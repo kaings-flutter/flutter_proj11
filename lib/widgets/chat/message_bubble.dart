@@ -33,6 +33,8 @@ class MessageBubble extends StatelessWidget {
             horizontal: 8,
           ),
           child: Column(
+            crossAxisAlignment:
+                isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
             children: [
               Text(
                 email.substring(0, email.indexOf('@')),
