@@ -36,7 +36,7 @@ class _AuthFormState extends State<AuthForm> {
     final isValid = _formKey.currentState.validate();
     FocusScope.of(context).unfocus(); // hide the keyboard since unfocussed
 
-    if (_userImage == null) {
+    if (_userImage == null && !_isLogin) {
       Scaffold.of(context).showSnackBar(
         SnackBar(
           content: Text('Please pick an image!'),
