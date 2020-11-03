@@ -34,6 +34,10 @@ class _ChatScreenState extends State<ChatScreen> {
         return;
       },
     );
+
+    // the following topic subscription will trigger when
+    // the app is running on background or exited (notificatino will pop)
+    fbm.subscribeToTopic('chat');
   }
 
   @override
